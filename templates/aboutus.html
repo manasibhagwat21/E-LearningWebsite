@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<head>
+<title>About Us</title>
+<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<style>
+
+#abt1 , #abt2 {
+	text-align:justify;
+  padding-top:35px;
+  padding:40px 15px;
+
+}
+#abt2 h1{
+	text-align:left;
+}
+#abt2{
+border-bottom: solid 5px #ddd;
+padding-bottom:30px;
+}
+#showcase {
+	background:url('/static/abt1.jpeg') no-repeat ;
+	background-color:#05386B;
+	background-position: center;
+ 	background-size: cover;
+ 	min-height:400px;
+	padding-top:50px;
+	border-bottom:#ddd;
+	color:#000;
+}
+#showcase h2{
+	margin-top:100px;
+	text-align:center;
+	font-weight: bold;
+	font-size:50px;
+	color:#000;
+    }
+	#showcase p{
+		padding:0 15px;
+		padding-top:30px
+	}
+	#rev h2{
+		text-align:center;
+		padding-bottom: 20px;
+	}
+	#rev h3{
+		text-align:center;
+		padding-bottom: 20px;
+	}
+	#rev{
+		text-align: justify;
+		padding:15px;
+		padding-top:30px;
+	}
+	#info{
+		padding:15px;
+		padding-top:30px;
+	}
+
+</style>
+</head>
+
+<body>
+
+
+	<div id='showcase'>
+		<br><br><br><br>
+		<h2>About Us</h2>
+	</div>
+<div class="container">
+<div id='info'><p> Destiny was created by a team of passionate coders from TSEC’s workshop for experimental products, Area 120. Coding is becoming such an essential skill, and we want to make it possible for everyone to learn even when life gets busy. We made Destiny to help folks like you get into coding in a fun and easy way. And we put Destiny on a phone so you can turn your commute or waiting in line into a learning moment. We hope you like it and that it helps you embark or continue your journey in learning to code.</p>
+</div>
+	
+
+<div class='row' id ='abt1'>
+<div class='col-md-8'>
+<h1>Our Goals</h1>
+<p>As online education gains in popularity, students will rightly demand more from their educators.
+The democratization of educationhas been great, not only for teachers who now get access to students without having to go through the traditional school system, but also for students who nowgain access to a growing number of highly skilled teachers who are competing with each other.
+Through the process of competition, teachers who can’t prove their worth, or the worth of their eCourses, will be weeded out.Students will demand to see results. This new dynamic is putting a new performance pressure on teachers. It’s making them more accountable to their students, which we think is great!</p>
+</div>
+<div class='col-md-4'><img src="static/abt2.jpeg" alt="our goals" width=100% height=100%></div>
+</div>
+
+<div class='row' id ='abt2'>
+<div class='col-md-4'><img src="static/abt3.jpeg" alt="our mission" width=100% height=100%></div>
+<div class='col-md-8'>
+<h1 >Our Missions </h1>
+<p>There are a couple of things our member did to make sure his students were reaching their goals.The most important thing he did was implement student progress tracking software into his system.You can do this to keep a finger on the pulse of many important features of your online course.Essentially the tracking software is any type of data collection software that tells the teacherhow their students feel they are doing and it provides an opportunity for the students to tell the teacher orprogram administrators how they could be doing better. When the eCourse administrators look at all of the collected data, theywill be better able to tell if there are any glaring holes in their educational platform.For example, let’s say we’re teaching a course on how to make a paper airplane. Let’s say there are 10 steps involved.We’ve created content to walk students through each step. Each step of the way students are required to upload a picture oftheir paper airplane so the teacher can review their work, make recommendations for improvement and just generally make sure the that mistake will just compound itself by the time it gets to step 10. </p>
+</div>
+
+</div>
+<div id='rev'>
+<h2>Student Reviews</h2>
+<div class='row'>
+
+<div  class='col-md-4'>
+<h3 >Divya Khasgiwal , Mumbai</h3>
+<div style="font-size: 30%"><i class="fas fa-user-graduate"></i></div>
+I'm delighted to have this course offered on Positive Psychology through Destiny. I found out about it through the Friday Center at UNC. The professor, Barbara Fredrickson, is renowned in this field and she teaches PP at the University of North Carolina, near me. I appreciate the format and set up of the course. The videos are very well done. Barbara has 3 other people with her, all employees of UNC, who take the course and we get to view and hear their interaction. I'm extremely interested in Positive Psychology and you won't find a better professor than Fredrickson. A helpful aspect is that you can save notes, repeat parts of the vids, and you have written text to follow if you like along with the vid.<br> <br>
+</div>
+<div  class='col-md-4'>
+<h3>Mihir Bhagwat , New Jersey</h3>
+I LOVE Destiny. I've taken dozens of courses and learned so much. And, it's free unless you want to earn a certificate. My favorite course was: "Hacking Exercise For Health. The surprising new science of fitness". Another good one is: "A Life of Happiness and Fulfillment". I also enjoyed De-Mystifying Mindfulness. There are so many courses to take in so many areas. Check it out. Go to Destiny.org. <br>
+</div>
+<div  class='col-md-4'>
+<h3>Virti Masalia , Gujarat</h3>
+Being in a dominant market and the other learning platforms are not as good for the time. They will put into absorbing the information Also influence on the way. I am determined to help people with the right education of the product and the delivery of network services is a great opportunity!! <br>
+</div>
+</div>
+
+
+</div>
+</div>
+
+{% endblock body %}
+
+

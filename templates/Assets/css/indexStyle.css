@@ -1,0 +1,67 @@
+#showcase {
+	background:url('/Assets/img/main.jpeg') no-repeat ;
+	background-color:#05386B;
+	background-position: center;  	 
+ 	background-size: cover; 
+ 	min-height:400px;
+	padding-top:50px;
+	border-bottom:;
+}
+#showcase h2{
+	margin-top:100px;
+	text-align:center;
+	font-weight: bold;
+	font-size:50px;
+	color:#fff;
+    }
+
+#showcase p{
+	text-align:center;
+	color:#ffffff;
+}
+.faded{
+    opacity: 0.5;
+}
+.numbers{
+    font-weight: 600;
+}
+.icon, .numbers{
+    font-size: 1.5rem;
+}
+.heading{
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    opacity: 0.7;
+}
+.users{
+    text-align: center;
+    align-items: center;
+}
+.code{
+    padding: 5rem;
+    text-align: center;
+    
+}
+.button{
+    text-align: center;
+
+}
+.heading2{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 3.5rem;
+    opacity: 0.7;
+}
+.code2{
+    padding: 5rem;
+    text-align: center;
+}
+.journey{
+    width: 100%;
+    height: auto;
+}
+.body{
+    background-color: aliceblue;
+}

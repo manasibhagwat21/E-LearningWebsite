@@ -1,0 +1,62 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<head>
+    <title>Resources</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<style>
+#notes{
+    padding-bottom:5%;
+}
+#notes h3{
+    text-align: center;
+    padding:2%;
+}
+#notes a{
+    color: #000;
+}
+#notes a:hover{
+    color: #1778D4 !important;
+}
+    #back{
+		margin:10px;
+		padding:10px;
+		width:100%;
+		background:#263238;
+		color:#fff;
+	}
+    .loginHeader{
+            text-align:center;
+            font-size:3rem;
+            opacity: 0.8;
+        }
+</style>
+
+
+<body>
+<div class="container" id = "notes">
+    <h3 class='loginHeader'>Study Notes</h3> <table class="table">
+ <thead class="thead-dark">
+        <th scope="col">Topic Name</th>
+        <th scope="col">File Name</th>
+        <th scope="col">File</th>
+ </thead>
+        {% for Material in Materials %}
+        <tr >
+            <td >{{ Material.topic_name }}</td>
+            <td>{{Material.notes_file}}</td>
+            <td><a href="{{Material.notes_file.url}}" type = "application/pdf" >View Here</a></td>
+        </tr>
+
+{% endfor %}
+  </table>
+    <br>
+    <div ><a href="catalog"><button type="submit" class="btn" id="back" >Back to Courses</button></a></div><br> <br>
+</div>
+{% endblock body %}

@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<head>
+        <title>Catalog</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link
+        rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+
+        <link rel="stylesheet" href="{{ STATIC_URL }}indexStyle.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+        integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+        integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <style>
+            #showcase {
+        background:url('static/homebg.png') no-repeat ;
+        background-color:#05386B;
+        background-position: center;
+        background-size: cover;
+        min-height:400px;
+        padding-top:50px;
+        padding-left:50px;
+        border-bottom:;
+}
+#showcase h2{
+	margin-top:100px;
+	text-align:left;
+	font-weight: bold;
+	font-size:50px;
+	color:#fff;
+    }
+
+#showcase p{
+	text-align:center;
+	color:#ffffff;
+}
+.faded{
+    opacity: 0.5;
+}
+.numbers{
+    font-weight: 600;
+}
+.icon, .numbers{
+    font-size: 1.5rem;
+}
+.heading{
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    opacity: 0.7;
+}
+.users{
+    text-align: center;
+    align-items: center;
+}
+.code{
+    padding: 5rem;
+    text-align: center;
+
+}
+.button{
+    text-align: center;
+
+}
+.heading2{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 3.5rem;
+    opacity: 0.7;
+
+}
+.code2{
+    padding: 5rem;
+    text-align: center;
+}
+.journey{
+    width: 100%;
+    height: auto;
+}
+.body{
+    background-color: aliceblue;
+}
+        </style>
+    </head>
+
+        <div id='showcase'>
+            <br>
+            <h2>Learn to Code.<br>
+                Broaden Your Horizons.</h2>
+        </div>
+        <br>
+        <div class="container">
+            <p class="heading">Learning to write programs
+                stretches your mind,<br> and helps you think better, creates a way of thinking about things that
+                I think is helpful in all domains</p>
+            <div class="users">
+                <span><i class="fa fa-users faded icon"></i><span class="numbers"> 2,000,000</span> <span class="faded"> users </span>
+                <i class="fa fa-globe icon faded"></i> <span class="faded">  active in</span><span class="numbers"> +100</span>
+                    <span class="faded"> countries</span></span>
+            </div>
+            <br>
+            <div class="button">
+                <a href="signup.html"><button class="btn btn-success btn-lg" >Get starded</button></a>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="code">
+            <img class="img-responsive" style="width: 100%; height: 30%;" src="static/code.jpeg">
+        </div>
+        <br>
+        <div class="container">
+            <div class="row">
+                <p class="heading2">Embark on a journey
+                    <br>from beginner to creator</p>
+            </div>
+        </div>
+        <div class="code2">
+            <img class="img-responsive journey" src="static/journey.jpg">
+        </div>
+        <div class="container">
+            <div class="row" >
+                <p class="heading2">Guided Learning Paths</p>
+                <br>
+                <p style="text-align: center; padding-bottom:10%;">Enter into a series of lessons that are ordered in the most optimal way for becoming a true creator.
+                   <br> Come out a fully-fledged coder and be able to independently go towards your own goals.</p>
+            </div>
+        </div>
+{% endblock body %}
+

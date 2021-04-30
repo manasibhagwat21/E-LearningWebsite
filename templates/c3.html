@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<head>
+	<title>Machine Learning</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+Body{text-align:justify;}
+	#courseinfo{
+		margin-top:30px;
+		border-bottom: 2px  solid #ddd;
+		padding-bottom:20px;
+	}
+	#courseinfo h2 {
+	text-transform: capitalize;
+	font-size:30px;
+	}
+	.video-container {
+    overflow: hidden;
+    position: relative;
+    width:100%;
+	}
+	.video-container::after {
+		padding-top: 50%;
+		display: block;
+		content: '';
+	}
+	.video-container iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+  #showcase {
+	background:url('../img/sc.png') no-repeat ;
+	background-color:#05386B;
+	background-position: center;
+ 	background-size: cover;
+ 	min-height:400px;
+	padding-top:50px;
+	border-bottom:;
+	}
+	#showcase h2{
+		margin-top:100px;
+		text-align:center;
+		font-weight: bold;
+		font-size:50px;
+		color:#fff;
+	}
+	#showcase p{
+		text-align:center;
+		color:#ffffff;
+		font-size:20px;
+	}
+	#sideC li{
+		padding:15px;
+		font-size:20px;
+	}
+	#sideC{
+		border-left: 2px  solid #ddd;
+	}
+	#back button{
+		margin:10px;
+		padding:10px;
+		width:100%;
+		background:#263238;
+		color:#fff;
+	}
+</style>
+<body>
+
+<div id='showcase'>
+    <h2>Machine Learning</h2>
+    <p>Introduction To Machine Learning</p>
+</div>
+
+<div class='container'>
+
+	<div class="row" id="courseinfo">
+
+		<div class='col-md-9 col-sm-12'>
+			<h2>About this course</h2>
+			<p>Machine learning is the science of getting computers to act without being explicitly programmed. In the past decade, machine learning has given us self-driving cars, practical speech recognition, effective web search, and a vastly improved understanding of the human genome. Machine learning is so pervasive today that you probably use it dozens of times a day without knowing it. Many researchers also think it is the best way to make progress towards human-level AI. In this class, you will learn about the most effective machine learning techniques, and gain practice implementing them and getting them to work for yourself. More importantly, you'll learn about not only the theoretical underpinnings of learning, but also gain the practical know-how needed to quickly and powerfully apply these techniques to new problems. Finally, you'll learn about some of Silicon Valley's best practices in innovation as it pertains to machine learning and AI.</p>
+		<p>Explore the concepts of Machine Learning and understand how it’s transforming the digital world. An exciting branch of Artificial Intelligence, this Machine Learning certification online course will provide the skills you need to become a Machine Learning Engineer and unlock the power of this emerging field. </p>
+		</div>
+
+		<div class='col-md-3  col-sm-12' id='sideC'>
+			<ul>
+				<li>Shareable Certificate</li>
+				<li>100 % Online</li>
+				<LI>English</LI>
+				<li>Beginner level</li>
+			</ul>
+		</div>
+
+	</div>
+	<div class="video-container">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/HcqpanDadyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div> <br> <br>
+
+
+	<div id='back'><a href="resources.html"><button type="submit" class="btn" >Resources</button></a></div> <br>
+
+	<div id='back'><a href="catalog"><button type="submit" class="btn" >Back to Courses</button></a></div> <br> <br>
+
+</div>
+
+{% endblock body %}
