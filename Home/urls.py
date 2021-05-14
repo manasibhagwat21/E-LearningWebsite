@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from Home import views
+from django.conf.urls import url
 
 urlpatterns = [
   #  path('admin/', admin.site.urls),
@@ -24,5 +25,7 @@ urlpatterns = [
     path('course.html', views.course, name='course'),
     path('login_faculty.html', views.login_faculty,name = 'login_faculty'),
     path('catalog_faculty.html', views.catalog_faculty,name = 'catalog_faculty'),
-
+    path('coursePage.html', views.coursePage,name = 'coursePage.html'),
+    url(r'^(?P<slug>[\w-]+)/$', views.coursePage, name='coursePage'),
 ]
+

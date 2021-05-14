@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<head>
+	<title>Web Development</title>
+	<meta charset="utf-8">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+	integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+	integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+Body{text-align:justify;}
+
+	#courseinfo{
+		margin-top:30px;
+		border-bottom: 2px  solid #ddd;
+		padding-bottom:20px;
+	}
+	#courseinfo h2 {
+	text-transform: capitalize;
+	font-size:30px;
+	}
+	.video-container {
+    overflow: hidden;
+    position: relative;
+    width:100%;
+	}
+	.video-container::after {
+		padding-top: 50%;
+		display: block;
+		content: '';
+	}
+	.video-container iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+  #showcase {
+	background:url('../img/sc.png') no-repeat ;
+	background-color:#05386B;
+	background-position: center;
+ 	background-size: cover;
+ 	min-height:400px;
+	padding-top:50px;
+	border-bottom:;
+	}
+	#showcase h2{
+		margin-top:100px;
+		text-align:center;
+		font-weight: bold;
+		font-size:50px;
+		color:#fff;
+	}
+	#showcase p{
+		text-align:center;
+		color:#ffffff;
+		font-size:20px;
+	}
+	#sideC li{
+		padding:15px;
+		font-size:20px;
+	}
+	#sideC{
+		border-left: 2px  solid #ddd;
+	}
+	#back button{
+		margin:10px;
+		padding:10px;
+		width:100%;
+		background:#263238;
+		color:#fff;
+	}
+</style>
+<body>
+<main class='main'>
+<div id='showcase'>
+    <h2>{{course.topic_name}}</h2>
+</div>
+</main>
+<div class='container'>
+
+	<div class="row" id="courseinfo">
+
+		<div class='col-md-9 col-sm-12'>
+			<h2>About this course</h2>
+			<p>{{course.desc}}</p>
+			
+		</div>
+
+		<div class='col-md-3  col-sm-12' id='sideC'>
+			<ul>
+				<li>Shareable Certificate</li>
+				<li>100 % Online</li>
+				<LI>English</LI>
+				<li>Intermediate level</li>
+			</ul>
+		</div>
+
+	</div>
+	<div class="video-container">
+		<iframe width="560" height="315" src="{{course.video_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div> <br><br>
+
+
+	<div id='back'><a href="resources.html"><button type="submit" class="btn" >Resources</button></a></div> <br>
+
+	<div id='back'><a href="catalog"><button type="submit" class="btn" >Back to Courses</button></a></div><br> <br>
+
+</div>
+
+
+
+{% endblock body %}

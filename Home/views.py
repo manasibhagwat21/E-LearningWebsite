@@ -128,7 +128,6 @@ def c6(request):
     return render(request, 'c6.html')
 
 
-
 def resources(request):
     all_Materials = Upload_Files.objects.all()
     return render(request, 'resources.html', {"Materials": all_Materials})
@@ -138,7 +137,9 @@ def course(request):
     m = course_upload.objects.all()
     return render(request, 'course.html', {"courses": m})
 
-
+def coursePage(request,slug):
+    selected_course=course_upload.objects.get(slug=slug)
+    return render (request,'coursePage.html',{'course':selected_course})
 
 def login_faculty(request):
 
@@ -201,6 +202,7 @@ def upload_c(request):
     files = course_upload.objects.all()
     if request.method == "POST":
         topic_name = request.POST.get('topic_name')
+        slug = request.POST.get('slug')
         desc = request.POST.get('desc')
         video_link = request.POST.get('video_link') 
         notes_file = request.FILES.get('notes_file')
@@ -208,8 +210,8 @@ def upload_c(request):
         v=video_link.replace('/watch?v=', '/embed/')
         print(v)
         
-        file = course_upload.objects.create(topic_name=topic_name, desc=desc,video_link=v, notes_file=notes_file)
+        file = course_upload.objects.create(topic_name=topic_name, slug=slug, desc=desc,video_link=v, notes_file=notes_file)
         file.save()
-        return redirect('resources.html')
+        return redirect('index')
 
     return render(request, 'upload_c.html', {"files": files})

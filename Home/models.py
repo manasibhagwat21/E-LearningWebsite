@@ -34,6 +34,7 @@ class Upload_Files(models.Model):
 
 class course_upload(models.Model):
     topic_name = models.CharField(max_length=200)
+    slug=models.SlugField()
     desc = models.CharField(max_length=500)
     notes_file = models.FileField(upload_to="Material/")
     video_link = models.CharField(max_length=800,default='')

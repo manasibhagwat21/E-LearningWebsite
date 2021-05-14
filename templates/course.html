@@ -5,9 +5,18 @@
 <head>
 	<title>PYTHON</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+	integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+	integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
 <style>
 	Body{text-align:justify;}	
@@ -17,7 +26,8 @@
 		background-position: center;
 		background-size: cover;
 		min-height:400px;
-		margin-bottom:2%;
+		padding-top:50px;
+		border-bottom:;
 	}
 	#showcase h2{
 		margin-top:100px;
@@ -33,87 +43,65 @@
 		background:#263238;
 		color:#fff;
 	}
-	#card {
+	.card {
 		background: #fff;
 		border:#ddd solid .5px;
 		border-radius: 5px;
 		box-shadow: 5px 5px 8px -3px rgba(0, 0, 0, 0.5);
-		padding:10px;
-		margin-bottom:20px;
+		padding:4px;
+		margin: auto;
+		margin-bottom:2%;
 	}
-	
-	/* Style the button that is used to open and close the collapsible content */
-	.collapsible {
-	background-color: #fff;
-	color: #000;
-	cursor: pointer;
-	padding: 18px;
-	width: 100%;
-	border: 1px solid #eee;
-	text-align: left;
-	outline: none;
-	font-size: 15px;
+	.card img{
+		width:100%;
+		max-height:350px;
+	}
+	.card h2{
+		padding:5px;
 	}
 
-	/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-	.active, .collapsible:hover {
-	background-color: #000;
-	color:#fff
+	button {
+		border: none;
+		padding: 8px;
+		color: white;
+		background-color: #000;
+		text-align: center;
+		width: 100%;
+		font-size: 18px;
 	}
 
-	/* Style the collapsible content. Note: hidden by default */
-
-	.content {
-	padding: 0 18px;
-	background-color: white;
-	max-height: 0;
-	overflow: hidden;
-	transition: max-height 0.2s ease-out;
-	}
-	.content h3{
-		padding:1%;
+	a {
+		text-decoration: none;
+		color: black;
 	}
 
-	.collapsible:after {
-	content: '\02795'; /* Unicode character for "plus" sign (+) */
-	font-size: 13px;
-	color: white;
-	float: right;
-	margin-left: 5px;
+	button:hover, a:hover {
+		opacity: 0.7;
 	}
+		
 
-	.active:after {
-	content: "\2796"; /* Unicode character for "minus" sign (-) */
-	}
 
 </style>
+
+</head>
 <body>
 
 
-<div id='showcase'></div>
+<div id='showcase'><h2>Welcome to Courses</h2></div>
 
 <div>
 
-{% for Material in courses %}
+
+{% for course in courses %}
 <div class='container'>
-	<div class='col-xs-12' id="card">
-		<h2>{{ Material.topic_name }}</h2>		
-		<button type="button" class="collapsible">Enroll Now</button>
-			<div class="content">
-				<h3>About This Course</h3>
-				<p>{{ Material.desc }} </p>
-				<h3>Video Link</h3>
-				<div class="video-container">
-					<iframe width="560" height="315" src={{ Material.video_link }} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</div>
-				<p><a href="{{ Material.video_link }}" >Go to Video</a></p>
-				<h3>Notes</h3>
-				<p><a href="{{Material.notes_file.url}}" type = "application/pdf" >View Here</a></p>
-			</div>
+	<div class='col-xs-4 card'>
+		<img src="/static/bluebg.jpg" alt="course image">
+		<h2>{{ course.topic_name }}</h2>	
+		<a href="{%url 'coursePage' slug=course.slug %}"><button type="button">Enroll Now</button></a>
 	</div>
 </div>
 			
-			
+		
 			
 {% endfor %}
 
@@ -136,7 +124,8 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
-</script>
 
+
+</script>
 
 {% endblock body %}
