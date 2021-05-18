@@ -5,15 +5,7 @@ body {
  .logo-footer {
     margin-bottom: 40px;
  }
- .navbar-custom {
-    background-color: lightgreen;
-}
-/* Modify brand and text color */
-  
-.navbar-custom .navbar-brand,
-.navbar-custom .navbar-text {
-    color: green;
-}
+
 footer {
         background-color: #05386B !important;
         color:#fff;

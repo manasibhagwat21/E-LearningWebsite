@@ -22,10 +22,10 @@ urlpatterns = [
     path('signup.html', views.signup,name = 'signup.html'),
     path('upload_file.html', views.upload_file, name='upload_file'),
     path('upload_c.html', views.upload_c, name='upload_c'),
-    path('course.html', views.course, name='course'),
-    path('login_faculty.html', views.login_faculty,name = 'login_faculty'),
+    path('course.html', views.course, name='course.html'),
+    path('login_faculty.html', views.login_faculty,name = 'login_faculty.html'),
+    path('faculty_options.html', views.faculty_options,name = 'faculty_options.html'),
     path('catalog_faculty.html', views.catalog_faculty,name = 'catalog_faculty'),
-    path('coursePage.html', views.coursePage,name = 'coursePage.html'),
-    url(r'^(?P<slug>[\w-]+)/$', views.coursePage, name='coursePage'),
+    url(r'^(?P<link>[\w-]+)/$', views.coursePage, name='coursePage'),
 ]
 

@@ -45,15 +45,9 @@
 {% csrf_token %}
 <h2 class="mb-3 loginHeader">Sign Up</h2>
     {% for field in form %}
-        <p class="mb-3">
-        {{ field.label_tag }}<br>
+        <p class="mb-3 ">
+        <p class="pb-1 lab">{{ field.label_tag }}<br></p>
         {{ field }}
-        <!--        {% if field.help_text %}-->
-        <!--          <small style="color: grey">{{ field.help_text }}</small>-->
-        {% endif %}
-        {% for error in field.errors %}
-        <p style="color: red">{{ error }}</p>
-        {% endfor %}
         </p>
     {% endfor %}
 <br><button class="btn btn-lg btn-primary" type="submit"><i class="fa fa-sign-in"></i> Sign up</button><br>

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<head>
+    <style>
+    #showcase {
+        background:url('/static/bluebg.jpg') no-repeat ;
+        background-color:#05386B;
+        background-position: center;
+        background-size: cover;
+        min-height:400px;
+        padding-top:50px;
+        border-bottom:;
+    }
+    #showcase h2{
+        margin-top:100px;
+        text-align:center;
+        font-weight: bold;
+        font-size:50px;
+        color:#fff;
+    }
+    .fac button {
+		color: white;
+		background-color: #000;
+		text-align: center;
+		width: 100%;
+		font-size: 25px;
+        margin:20% 1.5%;
+        padding:7% 2%;
+	}
+    .fac a{
+        text-decoration:none;
+    }
+    .fac button:hover{
+        color: white;
+		background-color: #000;
+    }
+
+    </style>
+</head>
+<body>
+<div id='showcase'>
+    <h2>Welcome Faculty</h2>
+</div>
+<div class='container'>
+
+    <div class='row fac'>
+        <div class='col-md-6'>
+            <a href="upload_file.html"><button class="btn btn-primary">Upload File</button></a>
+        </div>
+        <div class='col-md-6'>
+            <a href="upload_c.html"><button class="btn btn-primary">Upload Course</button></a>
+        </div>
+    </div>
+
+
+</div>
+</body>
+
+{% endblock body %}

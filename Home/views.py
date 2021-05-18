@@ -1,29 +1,14 @@
 from django.contrib import auth, messages
-
 from django.db import models
-
 from django.views.generic.list import ListView
-
 from .models import Contact, faculty, Upload_Files , course_upload
-
 from django.contrib.auth.models import User
-
 from django.contrib.auth.forms import UserCreationForm
-
 from django.contrib.auth import login, authenticate
-
 from django.shortcuts import render, redirect
-
 from .forms import SignUpForm
+from django.contrib.auth.decorators import login_required
 import os
-
-
-
-# Maria@20
-
-# Create your views here.s
-
-
 
 def signup(request):
     if request.method == 'POST':
@@ -81,15 +66,6 @@ def logoutU(request):
 def aboutus(request):
     return render(request, 'aboutus.html')
 
-
-def catalog(request):
-    return render(request, 'catalog.html')
-
-
-def catalog_faculty(request):
-    return render(request, 'catalog_faculty.html')
-
-
 def contactus(request):
     if request.method == 'POST':
         name = request.POST.get('name', '')
@@ -103,42 +79,19 @@ def contactus(request):
 
     return render(request, 'Contactus.html')
 
-
-def c1(request):
-    return render(request, 'c1.html')
-
-
-def c2(request):
-    return render(request, 'c2.html')
-
-
-def c3(request):
-    return render(request, 'c3.html')
-
-
-def c4(request):
-    return render(request, 'c4.html')
-
-
-def c5(request):
-    return render(request, 'c5.html')
-
-
-def c6(request):
-    return render(request, 'c6.html')
-
+def faculty_options(request):
+    return render(request, 'faculty_options.html')
 
 def resources(request):
     all_Materials = Upload_Files.objects.all()
     return render(request, 'resources.html', {"Materials": all_Materials})
 
-
 def course(request):
     m = course_upload.objects.all()
     return render(request, 'course.html', {"courses": m})
 
-def coursePage(request,slug):
-    selected_course=course_upload.objects.get(slug=slug)
+def coursePage(request,link):
+    selected_course=course_upload.objects.get(link=link)
     return render (request,'coursePage.html',{'course':selected_course})
 
 def login_faculty(request):
@@ -150,8 +103,8 @@ def login_faculty(request):
 
         if faculty.objects.filter(username=username, password=password):
             teacher = faculty.objects.get(username=username)
-            faculty.save()
-            return redirect('catalog_faculty.html')
+            teacher.save()
+            return redirect('faculty_options.html')
 
         else:
             messages.info(request, "Invalid Credentials")
@@ -171,7 +124,7 @@ def login1(request):
 
         if user is not None:
             login(request, user)
-            return render(request, 'catalog.html')
+            return render(request, 'course.html')
 
         else:
             return render(request, 'login1.html')
@@ -192,7 +145,7 @@ def upload_file(request):
 
 
         file.save()
-        return redirect('catalog_faculty')
+        return redirect('faculty_options.html')
     return render(request, 'upload_file.html', {"files": files})
 
 
@@ -202,7 +155,7 @@ def upload_c(request):
     files = course_upload.objects.all()
     if request.method == "POST":
         topic_name = request.POST.get('topic_name')
-        slug = request.POST.get('slug')
+        link = request.POST.get('link')
         desc = request.POST.get('desc')
         video_link = request.POST.get('video_link') 
         notes_file = request.FILES.get('notes_file')
@@ -210,8 +163,35 @@ def upload_c(request):
         v=video_link.replace('/watch?v=', '/embed/')
         print(v)
         
-        file = course_upload.objects.create(topic_name=topic_name, slug=slug, desc=desc,video_link=v, notes_file=notes_file)
+        file = course_upload.objects.create(topic_name=topic_name, link=link, desc=desc,video_link=v, notes_file=notes_file )
         file.save()
-        return redirect('index')
+        return redirect('faculty_options.html')
 
     return render(request, 'upload_c.html', {"files": files})
+
+
+# EXTRA PAGES
+
+def c1(request):
+    return render(request, 'c1.html')
+
+def c2(request):
+    return render(request, 'c2.html')
+
+def c3(request):
+    return render(request, 'c3.html')
+
+def c4(request):
+    return render(request, 'c4.html')
+
+def c5(request):
+    return render(request, 'c5.html')
+
+def c6(request):
+    return render(request, 'c6.html')
+
+def catalog(request):
+    return render(request, 'catalog.html')
+
+def catalog_faculty(request):
+    return render(request, 'catalog_faculty.html')
