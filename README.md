@@ -11,5 +11,3 @@ Frontend -
 Backend -
 - Django
 
-# Architecture
-![Untitled Document](https://user-images.githubusercontent.com/68377340/125427627-be93d432-d90b-47b9-ac99-2a7226d9f61e.png)
